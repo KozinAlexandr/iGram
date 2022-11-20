@@ -15,6 +15,8 @@
 		40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765B292ABCB0001B3183 /* Extensions.swift */; };
 		40D6765E292AC15D001B3183 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765D292AC15D001B3183 /* FeedView.swift */; };
 		40D67660292AC261001B3183 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765F292AC261001B3183 /* PostView.swift */; };
+		40D67663292AC72C001B3183 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D67662292AC72C001B3183 /* PostModel.swift */; };
+		40D67665292ACBD6001B3183 /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D67664292ACBD6001B3183 /* PostArrayObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		40D6765B292ABCB0001B3183 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		40D6765D292AC15D001B3183 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		40D6765F292AC261001B3183 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		40D67662292AC72C001B3183 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		40D67664292ACBD6001B3183 /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		40D67646292AAFD8001B3183 /* iGram */ = {
 			isa = PBXGroup;
 			children = (
+				40D67661292AC718001B3183 /* Model */,
 				40D6765A292ABC96001B3183 /* Helpers */,
 				40D67657292ABA17001B3183 /* Views */,
 				40D6764B292AAFD9001B3183 /* Assets.xcassets */,
@@ -109,6 +114,15 @@
 				40D6765B292ABCB0001B3183 /* Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		40D67661292AC718001B3183 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40D67662292AC72C001B3183 /* PostModel.swift */,
+				40D67664292ACBD6001B3183 /* PostArrayObject.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D6765E292AC15D001B3183 /* FeedView.swift in Sources */,
+				40D67663292AC72C001B3183 /* PostModel.swift in Sources */,
 				40D6764A292AAFD8001B3183 /* ContentView.swift in Sources */,
 				40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */,
+				40D67665292ACBD6001B3183 /* PostArrayObject.swift in Sources */,
 				40D67660292AC261001B3183 /* PostView.swift in Sources */,
 				40D67648292AAFD8001B3183 /* iGramApp.swift in Sources */,
 			);

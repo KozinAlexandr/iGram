@@ -13,6 +13,8 @@
 		40D6764F292AAFD9001B3183 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D6764E292AAFD9001B3183 /* Preview Assets.xcassets */; };
 		40D67656292AB6AB001B3183 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D67655292AB6AB001B3183 /* LaunchScreen.storyboard */; };
 		40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765B292ABCB0001B3183 /* Extensions.swift */; };
+		40D6765E292AC15D001B3183 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765D292AC15D001B3183 /* FeedView.swift */; };
+		40D67660292AC261001B3183 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765F292AC261001B3183 /* PostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		40D6764E292AAFD9001B3183 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40D67655292AB6AB001B3183 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40D6765B292ABCB0001B3183 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		40D6765D292AC15D001B3183 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		40D6765F292AC261001B3183 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				40D67647292AAFD8001B3183 /* iGramApp.swift */,
 				40D67649292AAFD8001B3183 /* ContentView.swift */,
+				40D6765D292AC15D001B3183 /* FeedView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		40D67659292ABA2C001B3183 /* Subview */ = {
 			isa = PBXGroup;
 			children = (
+				40D6765F292AC261001B3183 /* PostView.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -176,8 +182,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D6765E292AC15D001B3183 /* FeedView.swift in Sources */,
 				40D6764A292AAFD8001B3183 /* ContentView.swift in Sources */,
 				40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */,
+				40D67660292AC261001B3183 /* PostView.swift in Sources */,
 				40D67648292AAFD8001B3183 /* iGramApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

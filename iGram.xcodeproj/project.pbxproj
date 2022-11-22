@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		40108C7F292D7CE300DE640D /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40108C7E292D7CE300DE640D /* CommentsView.swift */; };
+		40108C81292D803300DE640D /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40108C80292D803300DE640D /* MessageView.swift */; };
+		40108C83292D817600DE640D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40108C82292D817600DE640D /* CommentModel.swift */; };
 		40D67648292AAFD8001B3183 /* iGramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D67647292AAFD8001B3183 /* iGramApp.swift */; };
 		40D6764A292AAFD8001B3183 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D67649292AAFD8001B3183 /* ContentView.swift */; };
 		40D6764C292AAFD9001B3183 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D6764B292AAFD9001B3183 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		40108C7E292D7CE300DE640D /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		40108C80292D803300DE640D /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		40108C82292D817600DE640D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		40D67644292AAFD8001B3183 /* iGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D67647292AAFD8001B3183 /* iGramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iGramApp.swift; sourceTree = "<group>"; };
 		40D67649292AAFD8001B3183 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				40D6765F292AC261001B3183 /* PostView.swift */,
+				40108C80292D803300DE640D /* MessageView.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			children = (
 				40D67662292AC72C001B3183 /* PostModel.swift */,
 				40D67664292ACBD6001B3183 /* PostArrayObject.swift */,
+				40108C82292D817600DE640D /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,9 +208,11 @@
 				40D6765E292AC15D001B3183 /* FeedView.swift in Sources */,
 				40D67663292AC72C001B3183 /* PostModel.swift in Sources */,
 				40D6764A292AAFD8001B3183 /* ContentView.swift in Sources */,
+				40108C81292D803300DE640D /* MessageView.swift in Sources */,
 				40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */,
 				40D67665292ACBD6001B3183 /* PostArrayObject.swift in Sources */,
 				40D67660292AC261001B3183 /* PostView.swift in Sources */,
+				40108C83292D817600DE640D /* CommentModel.swift in Sources */,
 				40108C7F292D7CE300DE640D /* CommentsView.swift in Sources */,
 				40D67648292AAFD8001B3183 /* iGramApp.swift in Sources */,
 			);

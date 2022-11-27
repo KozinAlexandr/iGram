@@ -17,6 +17,7 @@ struct ContentView: View {
                     Image(systemName: "book.fill")
                     Text("Feed")
                 }
+            
             NavigationView {
                 BrowseView()
             }
@@ -24,12 +25,16 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Browse")
                 }
+            
             UploadView()
                 .tabItem {
                     Image(systemName: "square.and.arrow.up.fill")
                     Text("Upload")
                 }
-            Text("Screen 4")
+            
+            NavigationView {
+                ProfileView(profileDisplayName: "My Profile", isMyProfile: true, profileUserID: "")
+            }
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")

@@ -61,7 +61,7 @@ struct SettingsView: View {
                 
                 // MARK: SECTION 3: APPLICATION
                 GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone"), content: {
-                    
+                    //add github link on project
                     Button(action: {
                         openCustomURL(urlString: "https://www.google.com")
                     }, label: {

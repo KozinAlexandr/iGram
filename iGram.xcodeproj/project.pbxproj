@@ -21,6 +21,7 @@
 		40124D492936A52000269DDF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D482936A52000269DDF /* OnboardingView.swift */; };
 		40124D4B2936A72B00269DDF /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D4A2936A72B00269DDF /* SignInWithAppleButtonCustom.swift */; };
 		40124D4D2936A9D900269DDF /* OnboardingViewPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D4C2936A9D900269DDF /* OnboardingViewPart2.swift */; };
+		40124D4F2936AF6D00269DDF /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D4E2936AF6D00269DDF /* LikeAnimationView.swift */; };
 		4018A70D2933BCF200A2573B /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70C2933BCF200A2573B /* ImageGridView.swift */; };
 		4018A70F2933C60F00A2573B /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70E2933C60F00A2573B /* UploadView.swift */; };
 		4018A7112933F43B00A2573B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A7102933F43B00A2573B /* ImagePicker.swift */; };
@@ -54,6 +55,7 @@
 		40124D482936A52000269DDF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		40124D4A2936A72B00269DDF /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
 		40124D4C2936A9D900269DDF /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
+		40124D4E2936AF6D00269DDF /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 		4018A70C2933BCF200A2573B /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		4018A70E2933C60F00A2573B /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		4018A7102933F43B00A2573B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				40124D3E293684A300269DDF /* SettingsLabelView.swift */,
 				40124D40293688AE00269DDF /* SettingsRowView.swift */,
 				40124D4A2936A72B00269DDF /* SignInWithAppleButtonCustom.swift */,
+				40124D4E2936AF6D00269DDF /* LikeAnimationView.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				40D67660292AC261001B3183 /* PostView.swift in Sources */,
 				4018A7162934091700A2573B /* ProfileView.swift in Sources */,
 				40108C85292D8A5A00DE640D /* BrowseView.swift in Sources */,
+				40124D4F2936AF6D00269DDF /* LikeAnimationView.swift in Sources */,
 				40108C83292D817600DE640D /* CommentModel.swift in Sources */,
 				40124D452936955600269DDF /* SettingsEditImageView.swift in Sources */,
 				40108C7F292D7CE300DE640D /* CommentsView.swift in Sources */,

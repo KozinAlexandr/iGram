@@ -10,10 +10,10 @@ import UIKit
 
 struct UploadView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @State var showImagePicker: Bool = false
     @State var imageSelected: UIImage = UIImage(named: "logo")!
     @State var sourceType: UIImagePickerController.SourceType = .camera
-    
     @State var showPostImageView: Bool = false
     
     var body: some View {
@@ -47,6 +47,7 @@ struct UploadView: View {
             }
             .sheet(isPresented: $showImagePicker, onDismiss: segueToPostImageView, content: {
                 ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
+                    .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
             })
         
             Image("logo.transparent")

@@ -23,10 +23,11 @@ struct ImageGridView: View {
             pinnedViews: [],
             content: {
                 ForEach(posts.dataArray, id: \.self) { post in
+                    
                     NavigationLink(
                         destination: FeedView(posts: PostArrayObject(post: post), title: "Post"),
                         label: {
-                            PostView(post: post, animateLike: false, addHeartAnimationToView: false, showHeaderAndFooter: false)
+                            PostView(post: post, addHeartAnimationToView: false, showHeaderAndFooter: false)
                         })
                 }
             })

@@ -18,7 +18,7 @@ struct FeedView: View {
                 
                 // addHeartAnimationToView сделал false тк на всех постах лайки, а если не тру анимации нету
                 ForEach(posts.dataArray, id: \.self) { post in
-                    PostView(post: post, animateLike: true, addHeartAnimationToView: false, showHeaderAndFooter: true)
+                    PostView(post: post, addHeartAnimationToView: true, showHeaderAndFooter: true)
                 }
             }
         })

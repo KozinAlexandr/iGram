@@ -13,6 +13,7 @@ struct LikeAnimationView: View {
     
     var body: some View {
         ZStack {
+            
             Image(systemName: "heart.fill")
                 .foregroundColor(Color.red.opacity(0.3))
                 .font(.system(size: 200))

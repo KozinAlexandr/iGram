@@ -12,6 +12,9 @@
 		40108C83292D817600DE640D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40108C82292D817600DE640D /* CommentModel.swift */; };
 		40108C85292D8A5A00DE640D /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40108C84292D8A5A00DE640D /* BrowseView.swift */; };
 		40108C87292D8B5700DE640D /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40108C86292D8B5700DE640D /* CarouselView.swift */; };
+		40124D3D293680E800269DDF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D3C293680E800269DDF /* SettingsView.swift */; };
+		40124D3F293684A300269DDF /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D3E293684A300269DDF /* SettingsLabelView.swift */; };
+		40124D41293688AE00269DDF /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40124D40293688AE00269DDF /* SettingsRowView.swift */; };
 		4018A70D2933BCF200A2573B /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70C2933BCF200A2573B /* ImageGridView.swift */; };
 		4018A70F2933C60F00A2573B /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70E2933C60F00A2573B /* UploadView.swift */; };
 		4018A7112933F43B00A2573B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A7102933F43B00A2573B /* ImagePicker.swift */; };
@@ -36,6 +39,9 @@
 		40108C82292D817600DE640D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		40108C84292D8A5A00DE640D /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		40108C86292D8B5700DE640D /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		40124D3C293680E800269DDF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		40124D3E293684A300269DDF /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
+		40124D40293688AE00269DDF /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		4018A70C2933BCF200A2573B /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		4018A70E2933C60F00A2573B /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		4018A7102933F43B00A2573B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				4018A70E2933C60F00A2573B /* UploadView.swift */,
 				4018A7132933FF2700A2573B /* PostImageView.swift */,
 				4018A7152934091700A2573B /* ProfileView.swift */,
+				40124D3C293680E800269DDF /* SettingsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -138,6 +145,8 @@
 				4018A70C2933BCF200A2573B /* ImageGridView.swift */,
 				4018A7102933F43B00A2573B /* ImagePicker.swift */,
 				4018A71929340CB700A2573B /* ProfileHeaderView.swift */,
+				40124D3E293684A300269DDF /* SettingsLabelView.swift */,
+				40124D40293688AE00269DDF /* SettingsRowView.swift */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -233,6 +242,7 @@
 			files = (
 				40D6765E292AC15D001B3183 /* FeedView.swift in Sources */,
 				40D67663292AC72C001B3183 /* PostModel.swift in Sources */,
+				40124D3F293684A300269DDF /* SettingsLabelView.swift in Sources */,
 				4018A7142933FF2700A2573B /* PostImageView.swift in Sources */,
 				40D6764A292AAFD8001B3183 /* ContentView.swift in Sources */,
 				40108C81292D803300DE640D /* MessageView.swift in Sources */,
@@ -249,6 +259,8 @@
 				4018A7112933F43B00A2573B /* ImagePicker.swift in Sources */,
 				40108C87292D8B5700DE640D /* CarouselView.swift in Sources */,
 				40D67648292AAFD8001B3183 /* iGramApp.swift in Sources */,
+				40124D3D293680E800269DDF /* SettingsView.swift in Sources */,
+				40124D41293688AE00269DDF /* SettingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

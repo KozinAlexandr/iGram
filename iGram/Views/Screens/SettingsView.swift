@@ -48,16 +48,37 @@ struct SettingsView: View {
                         label: {
                             SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
                     })
-                    SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
+                    
+                    NavigationLink(
+                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Mosts users make it an image of themselves or of their who(?)!", selectedImage: UIImage(named: "dog1")!),
+                        label: {
+                            SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
+                        })
+                    
                     SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
                 })
                 .padding()
                 
                 // MARK: SECTION 3: APPLICATION
                 GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone"), content: {
-                    SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
-                    SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
-                    SettingsRowView(leftIcon: "globe", text: "iGram's Website", color: Color.MyTheme.yellowColor)
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.google.com")
+                    }, label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
+                    })
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.yahoo.com")
+                    }, label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
+                    })
+
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.yandex.com")
+                    }, label: {
+                        SettingsRowView(leftIcon: "globe", text: "iGram's Website", color: Color.MyTheme.yellowColor)
+                    })
                 })
                 .padding()
                 
@@ -86,6 +107,17 @@ struct SettingsView: View {
             )
         }
     }
+    
+    // MARK: FUNCTIONS
+    
+    func openCustomURL(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
 }
 
 struct SettingsView_Previews: PreviewProvider {

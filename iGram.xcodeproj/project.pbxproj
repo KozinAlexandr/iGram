@@ -25,6 +25,7 @@
 		40156C342937F62600468A4C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 40156C332937F62600468A4C /* GoogleSignIn */; };
 		40156C362937F62600468A4C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40156C352937F62600468A4C /* GoogleSignInSwift */; };
 		40156C392938093900468A4C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40156C382938093900468A4C /* AuthService.swift */; };
+		40156C3B293816AF00468A4C /* Enum & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40156C3A293816AF00468A4C /* Enum & Structs.swift */; };
 		4018A70D2933BCF200A2573B /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70C2933BCF200A2573B /* ImageGridView.swift */; };
 		4018A70F2933C60F00A2573B /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70E2933C60F00A2573B /* UploadView.swift */; };
 		4018A7112933F43B00A2573B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A7102933F43B00A2573B /* ImagePicker.swift */; };
@@ -68,6 +69,7 @@
 		40124D4C2936A9D900269DDF /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
 		40124D4E2936AF6D00269DDF /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 		40156C382938093900468A4C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		40156C3A293816AF00468A4C /* Enum & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum & Structs.swift"; sourceTree = "<group>"; };
 		4018A70C2933BCF200A2573B /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		4018A70E2933C60F00A2573B /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		4018A7102933F43B00A2573B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				40D6765B292ABCB0001B3183 /* Extensions.swift */,
+				40156C3A293816AF00468A4C /* Enum & Structs.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				40D6765E292AC15D001B3183 /* FeedView.swift in Sources */,
 				40156C392938093900468A4C /* AuthService.swift in Sources */,
+				40156C3B293816AF00468A4C /* Enum & Structs.swift in Sources */,
 				40124D4B2936A72B00269DDF /* SignInWithAppleButtonCustom.swift in Sources */,
 				40D67663292AC72C001B3183 /* PostModel.swift in Sources */,
 				40124D3F293684A300269DDF /* SettingsLabelView.swift in Sources */,

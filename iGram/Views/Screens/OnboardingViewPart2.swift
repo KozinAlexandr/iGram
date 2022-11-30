@@ -20,6 +20,8 @@ struct OnboardingViewPart2: View {
     @State var imageSelected: UIImage = UIImage(named: "logo")!
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     
+    @State var showError: Bool = false
+    
     var body: some View {
         VStack(alignment: .center, spacing: 20, content: {
             
@@ -61,6 +63,9 @@ struct OnboardingViewPart2: View {
         .sheet(isPresented: $showImagePicker, onDismiss: createProfile, content: {
             ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
         })
+        .alert(isPresented: $showError) { () -> Alert in
+            return Alert(title: Text("Error creating profile 😤"))
+        }
         
     }
     
@@ -68,6 +73,18 @@ struct OnboardingViewPart2: View {
     
     func createProfile() {
         print("CREATE PROFILE NOW")
+        AuthService.instance.createNewUserInDatabase(name: displayName, email: email, providerID: providerID, provider: provider, profileImage: imageSelected) { returnedUserID in
+            
+            if let userID = returnedUserID {
+                // SUCCESS
+                
+            } else {
+                // ERROR
+                print("Error creating user in Database")
+                self.showError.toggle()
+            }
+            
+        }
     }
     
 }

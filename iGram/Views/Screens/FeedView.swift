@@ -16,7 +16,6 @@ struct FeedView: View {
         ScrollView(.vertical, showsIndicators: false, content: {
             LazyVStack {
                 
-                // addHeartAnimationToView сделал false тк на всех постах лайки, а если не тру анимации нету
                 ForEach(posts.dataArray, id: \.self) { post in
                     PostView(post: post, addHeartAnimationToView: true, showHeaderAndFooter: true)
                 }

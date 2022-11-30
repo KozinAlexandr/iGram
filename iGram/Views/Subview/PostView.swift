@@ -14,7 +14,7 @@ struct PostView: View {
     @State var addHeartAnimationToView: Bool
     @State var showActionSheet: Bool = false
     @State var actionSheetType: PostActionSheetOption = .general
-    @State var postImage: UIImage = UIImage(named: "dog1")!
+    @State var postImage: UIImage = UIImage(named: "cat3")!
     
     var showHeaderAndFooter: Bool
     
@@ -33,7 +33,7 @@ struct PostView: View {
                     NavigationLink(
                         destination: ProfileView(profileDisplayName: post.username, isMyProfile: false, profileUserID: post.userID),
                         label: {
-                            Image("dog1")
+                            Image("cat2")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 30, height: 30, alignment: .center)

@@ -75,10 +75,11 @@ struct SettingsView: View {
                         SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
                     })
 
+                    
                     Button(action: {
-                        openCustomURL(urlString: "https://www.yandex.com")
+                        openCustomURL(urlString: "https://github.com/KozinAlexandr/iGram")
                     }, label: {
-                        SettingsRowView(leftIcon: "globe", text: "iGram's Website", color: Color.MyTheme.yellowColor)
+                        SettingsRowView(leftIcon: "globe", text: "Project on Github", color: Color.MyTheme.yellowColor)
                     })
                 })
                 .padding()

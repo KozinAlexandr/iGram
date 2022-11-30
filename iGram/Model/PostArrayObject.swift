@@ -15,10 +15,10 @@ class PostArrayObject: ObservableObject {
         
         print("FETCH FROM DATABASE HERE")
         
-        let post1 = PostModel(postID: "", userID: "", username: "Alex Kozin", caption: "This is a caption", dateCreated: Date(), likeCount: 0, likedByUser: false)
-        let post2 = PostModel(postID: "", userID: "", username: "Alex Petrishchev", caption: "Biba", dateCreated: Date(), likeCount: 0, likedByUser: false)
-        let post3 = PostModel(postID: "", userID: "", username: "Nikita Simakov", caption: "Boba", dateCreated: Date(), likeCount: 0, likedByUser: false)
-        let post4 = PostModel(postID: "", userID: "", username: "Kostya Lishenkov", caption: "TFT the best", dateCreated: Date(), likeCount: 0, likedByUser: false)
+        let post1 = PostModel(postID: "", userID: "", username: "Alex Kozin", caption: "Не бывает безвыходных ситуаций. Бывают ситуации, выход из которых тебя не устраивает.", dateCreated: Date(), likeCount: 0, likedByUser: false)
+        let post2 = PostModel(postID: "", userID: "", username: "Alex Petrishchev", caption: "Так же известен под ником А.Г.П. Самый крутой фрик, которого я знаю.", dateCreated: Date(), likeCount: 0, likedByUser: false)
+        let post3 = PostModel(postID: "", userID: "", username: "Nikita Simakov", caption: "Семейный человек.", dateCreated: Date(), likeCount: 0, likedByUser: false)
+        let post4 = PostModel(postID: "", userID: "", username: "Kostya Lishenkov", caption: "Если Костя победит лень это будет не Костя, а КОТСТАНТИН!!!", dateCreated: Date(), likeCount: 0, likedByUser: false)
         
         self.dataArray.append(post1)
         self.dataArray.append(post2)

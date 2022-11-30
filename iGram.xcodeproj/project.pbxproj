@@ -26,6 +26,7 @@
 		40156C362937F62600468A4C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 40156C352937F62600468A4C /* GoogleSignInSwift */; };
 		40156C392938093900468A4C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40156C382938093900468A4C /* AuthService.swift */; };
 		40156C3B293816AF00468A4C /* Enum & Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40156C3A293816AF00468A4C /* Enum & Structs.swift */; };
+		40156C3E2938190100468A4C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40156C3D2938190100468A4C /* ImageManager.swift */; };
 		4018A70D2933BCF200A2573B /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70C2933BCF200A2573B /* ImageGridView.swift */; };
 		4018A70F2933C60F00A2573B /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A70E2933C60F00A2573B /* UploadView.swift */; };
 		4018A7112933F43B00A2573B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A7102933F43B00A2573B /* ImagePicker.swift */; };
@@ -70,6 +71,7 @@
 		40124D4E2936AF6D00269DDF /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 		40156C382938093900468A4C /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		40156C3A293816AF00468A4C /* Enum & Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum & Structs.swift"; sourceTree = "<group>"; };
+		40156C3D2938190100468A4C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		4018A70C2933BCF200A2573B /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		4018A70E2933C60F00A2573B /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		4018A7102933F43B00A2573B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		40156C3C293818DA00468A4C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				40156C3D2938190100468A4C /* ImageManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		409647FF2937CEB60055F84B /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		40D67646292AAFD8001B3183 /* iGram */ = {
 			isa = PBXGroup;
 			children = (
+				40156C3C293818DA00468A4C /* Utilities */,
 				409647FF2937CEB60055F84B /* Services */,
 				40D67661292AC718001B3183 /* Model */,
 				40D6765A292ABC96001B3183 /* Helpers */,
@@ -337,6 +348,7 @@
 				4018A7142933FF2700A2573B /* PostImageView.swift in Sources */,
 				40124D4729369DC900269DDF /* SignUpView.swift in Sources */,
 				40D6764A292AAFD8001B3183 /* ContentView.swift in Sources */,
+				40156C3E2938190100468A4C /* ImageManager.swift in Sources */,
 				40108C81292D803300DE640D /* MessageView.swift in Sources */,
 				40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */,
 				40D67665292ACBD6001B3183 /* PostArrayObject.swift in Sources */,

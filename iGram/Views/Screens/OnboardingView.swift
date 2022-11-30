@@ -15,6 +15,11 @@ struct OnboardingView: View {
     @State var showOnboardingPart2: Bool = false
     @State var showError: Bool = false
     
+    @State var displayName: String = ""
+    @State var email: String = ""
+    @State var providerID: String = ""
+    @State var provider: String = ""
+    
     var body: some View {
         VStack(spacing: 10) {
             
@@ -84,7 +89,7 @@ struct OnboardingView: View {
         .background(Color.MyTheme.beigeColor)
         .edgesIgnoringSafeArea(.all)
         .fullScreenCover(isPresented: $showOnboardingPart2, content: {
-            OnboardingViewPart2()
+            OnboardingViewPart2(displayName: $displayName, email: $email, providerID: $providerID, provider: $provider)
         })
         .alert(isPresented: $showError, content: {
             return Alert(title: Text("Error signing in 😔"))
@@ -99,6 +104,12 @@ struct OnboardingView: View {
             
             if let providerID = returnedProviderID, !isError {
                 // SUCCESS
+                self.displayName = name
+                self.email = email
+                self.providerID = providerID
+                self.provider = provider
+                self.showOnboardingPart2.toggle()
+                
             } else {
                 // ERROR
                 print("Error getting into from log in user to Firebase")

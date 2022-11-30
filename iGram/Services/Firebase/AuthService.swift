@@ -48,13 +48,35 @@ class AuthService {
         
     }
     
+    func logInUserToApp(userID: String, hanlder: @escaping(_ success: Bool) -> ()) {
+        
+        // Get the users info
+        getUserInfo(forUserID: userID) { (returnedName, returnedBio) in
+            
+            if let name = returnedName, let bio = returnedBio {
+                // Success
+                print("Success getting user info while logging in")
+                hanlder(true)
+                
+                // Set the users info into our app
+                
+            } else {
+                // Error
+                print("Error getting user info while logging in")
+                hanlder(false)
+            }
+            
+        }
+        
+    }
+    
     func createNewUserInDatabase(name: String, email: String, providerID: String, provider: String, profileImage: UIImage, handler: @escaping(_ userID: String?) -> ()) {
         
         // Set up a user Document with the user Collection
         let document = REF_USERS.document()
         let userID = document.documentID
         
-        // Upload profile to Storaga.
+        // Upload profile to Storage
         ImageManager.instance.uploadProfileImage(userID: userID, image: profileImage)
         
         // Upload profile data to Firestore
@@ -82,5 +104,28 @@ class AuthService {
         }
         
     }
+    
+    // MARK: GET USER FUNCTIONS
+    
+    func getUserInfo(forUserID userID: String, hanlder: @escaping(_ name: String?, _ bio: String?) -> ()) {
+        
+        REF_USERS.document(userID).getDocument { (documentSnapshot, error) in
+            if let document = documentSnapshot,
+               let name = document.get(DatabaseUserField.displayName) as? String,
+               let bio = document.get(DatabaseUserField.bio) as? String {
+                print("Success getting user info")
+                hanlder(name, bio)
+                return
+            } else {
+                print("Error getting user info")
+                hanlder(nil, nil)
+                return
+            }
+                
+            
+        }
+        
+    }
+    
     
 }

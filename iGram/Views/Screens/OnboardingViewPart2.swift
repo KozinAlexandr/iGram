@@ -77,6 +77,7 @@ struct OnboardingViewPart2: View {
             
             if let userID = returnedUserID {
                 // SUCCESS
+                print("Successfully created new user in database")
                 
             } else {
                 // ERROR

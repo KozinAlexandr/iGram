@@ -53,8 +53,8 @@ class SignInWithGoogle {
 
             let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
       
-            //self.onboardingView.connectToFirebase(name: fullName, email: email, provider: "google", credential: credential)
-            print("SIGN IN TO FIREBASE NOW: email: \(fullName) and with name: \(email)")
+            //print("SIGN IN TO FIREBASE NOW: name: \(fullName) and with email: \(email)")
+            self.onboardingView.connectToFirebase(name: fullName, email: email, provider: "google", credential: credential)
     }
   }
   

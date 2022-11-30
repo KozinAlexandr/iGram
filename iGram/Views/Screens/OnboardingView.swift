@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct OnboardingView: View {
     
@@ -89,6 +90,24 @@ struct OnboardingView: View {
             return Alert(title: Text("Error signing in 😔"))
         })
     }
+    
+    // MARK: FUNCTIONS
+    
+    func connectToFirebase(name: String, email: String, provider: String, credential: AuthCredential) {
+        
+        AuthService.instance.logInUserToFirebase(credential: credential) { returnedProviderID, isError in
+            
+            if let providerID = returnedProviderID, !isError {
+                // SUCCESS
+            } else {
+                // ERROR
+                print("Error getting into from log in user to Firebase")
+                self.showError.toggle()
+            }
+        }
+        
+    }
+    
 }
 
 struct OnboardingView_Previews: PreviewProvider {

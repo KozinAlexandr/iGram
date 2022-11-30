@@ -2,10 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>This app uses the camera at the user&apos;s request to take a photo.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This allows the app to acess the photo library to import or save a photo at the user&apos;s request.</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1037732833768-8qh6ug1u62t2ahf0rjkhoujnpe8uquv7</string>
+			</array>
+		</dict>
+	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict/>

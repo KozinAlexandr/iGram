@@ -12,6 +12,7 @@ struct OnboardingView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var showOnboardingPart2: Bool = false
+    @State var showError: Bool = false
     
     var body: some View {
         VStack(spacing: 10) {
@@ -34,17 +35,22 @@ struct OnboardingView: View {
                 .foregroundColor(Color.MyTheme.purpleColor)
                 .padding()
             
+            // MARK: SIGN IN WITH APPLE
+            // doesn't work because there is no Apple subscription
             Button(action: {
                 showOnboardingPart2.toggle()
+                //SignInWithApple.instance.startSignInWithAppleFlow(view: self)
             }, label: {
                 SignInWithAppleButtonCustom()
                     .frame(height: 60)
                     .frame(maxWidth: .infinity)
             })
             
+            // MARK: SIGN IN WITH GOOGLE
             // maybe change "globe" to "google" icon
             Button(action: {
-                showOnboardingPart2.toggle()
+                SignInWithGoogle.shared.signIn(view: self)
+                //showOnboardingPart2.toggle()
             }, label: {
                 HStack {
                     
@@ -78,6 +84,9 @@ struct OnboardingView: View {
         .edgesIgnoringSafeArea(.all)
         .fullScreenCover(isPresented: $showOnboardingPart2, content: {
             OnboardingViewPart2()
+        })
+        .alert(isPresented: $showError, content: {
+            return Alert(title: Text("Error signing in 😔"))
         })
     }
 }

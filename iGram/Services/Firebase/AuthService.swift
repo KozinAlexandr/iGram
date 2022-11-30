@@ -54,7 +54,7 @@ class AuthService {
         let document = REF_USERS.document()
         let userID = document.documentID
         
-        // Upload profile to Storage
+        // Upload profile to Storaga.
         ImageManager.instance.uploadProfileImage(userID: userID, image: profileImage)
         
         // Upload profile data to Firestore

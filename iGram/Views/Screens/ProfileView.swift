@@ -45,7 +45,7 @@ struct ProfileView: View {
         })
     }
     
-    // MARK: FUNCTIONS
+    // MARK: FUNCTIONS.
     
     func getProfileImage() {
         

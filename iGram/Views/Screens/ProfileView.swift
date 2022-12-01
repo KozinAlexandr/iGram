@@ -14,6 +14,7 @@ struct ProfileView: View {
     @State var profileDisplayName: String
     @State var profileImage: UIImage = UIImage(named: "logo.loading")!
     @State var showSettings: Bool = false
+    @State var profileBio: String = ""
     
     var isMyProfile: Bool
     var profileUserID: String
@@ -21,7 +22,7 @@ struct ProfileView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage, postArray: posts)
+            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage, profileBio: $profileBio, postArray: posts)
             Divider()
             ImageGridView(posts: posts)
         })
@@ -40,7 +41,7 @@ struct ProfileView: View {
             getProfileImage()
         })
         .sheet(isPresented: $showSettings, content: {
-            SettingsView()
+            SettingsView(userDisplayName: $profileDisplayName, userBio: $profileBio)
         })
     }
     
@@ -51,6 +52,18 @@ struct ProfileView: View {
         ImageManager.instance.downloadProfileImage(userID: profileUserID) { (returnedImage) in
             if let image = returnedImage {
                 self.profileImage = image
+            }
+        }
+    }
+    
+    func getAdditionalProfileInfo() {
+        AuthService.instance.getUserInfo(forUserID: profileUserID) { (returnDisplayName, returnBio) in
+            if let displayName = returnDisplayName {
+                self.profileDisplayName = displayName
+            }
+            
+            if let bio = returnBio {
+                self.profileBio = bio
             }
         }
     }

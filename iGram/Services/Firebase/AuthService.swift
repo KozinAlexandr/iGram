@@ -58,7 +58,13 @@ class AuthService {
                 print("Success getting user info while logging in")
                 hanlder(true)
                 
-                // Set the users info into our app
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    // Set the users info into our app
+                    UserDefaults.standard.set(userID, forKey: CurrentUserDefaults.userID) // user_id?
+                    UserDefaults.standard.set(bio, forKey: CurrentUserDefaults.bio)
+                    UserDefaults.standard.set(name, forKey: CurrentUserDefaults.displayName)
+                }
+                
                 
             } else {
                 // Error

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OnboardingViewPart2: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @Binding var displayName: String
     @Binding var email: String
     @Binding var providerID: String
@@ -78,6 +80,19 @@ struct OnboardingViewPart2: View {
             if let userID = returnedUserID {
                 // SUCCESS
                 print("Successfully created new user in database")
+                
+                AuthService.instance.logInUserToApp(userID: userID) { (success) in
+                    if success {
+                        print("User logged in!")
+                        // return to app
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                    } else {
+                        print("Error logging in")
+                        self.showError.toggle()
+                    }
+                }
                 
             } else {
                 // ERROR

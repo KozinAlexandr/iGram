@@ -32,7 +32,7 @@ class ImageManager {
         uploadImage(path: path, image: image) { (_) in }
     }
     
-    func uploadPostImage(postID: String, image: UIImage, handler: @escaping(_ success: Bool) -> ()) {
+    func uploadPostImage(postID: String, image: UIImage, handler: @escaping (_ success: Bool) -> ()) {
         
         // Get the path where we will save the image
         let path = getPostImagePath(postID: postID)
@@ -44,10 +44,21 @@ class ImageManager {
         
     }
     
-    func downloadProfileImage(userID: String, handler: @escaping(_ image: UIImage?) -> ()) {
+    func downloadProfileImage(userID: String, handler: @escaping (_ image: UIImage?) -> ()) {
         
         // Get the path where the image is saved
         let path = getProfileImagePath(userID: userID)
+        
+        // Download the image from path
+        downloadImage(path: path) { (returnedImage) in
+            handler(returnedImage)
+        }
+    }
+    
+    func downloadPostImage(postID: String, handler: @escaping (_ image: UIImage?) -> ()) {
+        
+        // Get the path where the image is saved
+        let path = getPostImagePath(postID: postID)
         
         // Download the image from path
         downloadImage(path: path) { (returnedImage) in
@@ -123,7 +134,7 @@ class ImageManager {
         }
     }
     
-    private func downloadImage(path: StorageReference, handler: @escaping(_ image: UIImage?) ->()) {
+    private func downloadImage(path: StorageReference, handler: @escaping (_ image: UIImage?) ->()) {
         
         if let cachedImage = imageCache.object(forKey: path) {
             print("Image found in cache")

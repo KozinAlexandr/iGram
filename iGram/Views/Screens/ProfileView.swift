@@ -53,7 +53,6 @@ struct ProfileView: View {
                 self.profileImage = image
             }
         }
-        
     }
     
 }

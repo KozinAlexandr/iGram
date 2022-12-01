@@ -23,6 +23,8 @@ struct SettingsEditImageView: View {
     
     @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
     
+    let haptics = UINotificationFeedbackGenerator()
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             
@@ -77,12 +79,17 @@ struct SettingsEditImageView: View {
         .navigationBarTitle(title)
         .alert(isPresented: $showSuccessAlert) { () -> Alert in
             return Alert(title: Text("Success! 🥳"), message: nil, dismissButton: .default(Text("OK"), action: {
-                self.presentationMode.wrappedValue.dismiss()
+                dismissView()
             }))
         }
     }
     
     // MARK: FUNCTIONS
+    
+    func dismissView() {
+        self.haptics.notificationOccurred(.success)
+        self.presentationMode.wrappedValue.dismiss()
+    }
     
     func saveImage() {
         
@@ -95,9 +102,7 @@ struct SettingsEditImageView: View {
         ImageManager.instance.uploadProfileImage(userID: userID, image: selectedImage)
         
         self.showSuccessAlert.toggle()
-        
     }
-    
 }
 
 struct SettingsEditImageView_Previews: PreviewProvider {

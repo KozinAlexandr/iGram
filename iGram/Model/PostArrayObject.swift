@@ -44,4 +44,19 @@ class PostArrayObject: ObservableObject {
         }
     }
     
+    ///USED FOR FEED
+    init(shuffled: Bool) {
+        
+        print("GET POSTS FOR FEED. SHUFFLED: \(shuffled)")
+        DataService.instance.downloadPostsForFeed { (returnedPosts) in
+            if shuffled {
+                let shuffledPosts = returnedPosts.shuffled()
+                self.dataArray.append(contentsOf: shuffledPosts)
+            } else {
+                self.dataArray.append(contentsOf: returnedPosts)
+            }
+        }
+        
+    }
+    
 }

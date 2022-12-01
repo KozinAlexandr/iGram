@@ -26,6 +26,8 @@ struct DatabasePostField { // Fields with in Post Document in Database
     static let displayName = "display_name"
     static let caption = "caption"
     static let dateCreated = "date_created"
+    static let likeCount = "like_count" // Int
+    static let likedBy = "liked_by" // array
 
 }
 

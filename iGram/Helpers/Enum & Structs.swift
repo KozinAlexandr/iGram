@@ -31,6 +31,14 @@ struct DatabasePostField { // Fields with in Post Document in Database
 
 }
 
+struct DatabaseReportsField { // Fields with in Report Document in Database
+    
+    static let content = "content"
+    static let postID = "post_id"
+    static let dateCreated = "date_created"
+    
+}
+
 struct CurrentUserDefaults { // Fields for UserDefaults saved with in app
     
     static let displayName = "display_name"

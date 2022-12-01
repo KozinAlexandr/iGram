@@ -19,6 +19,7 @@ class DataService {
     static let instance = DataService()
     
     private var REF_POSTS = DB_BASE.collection("posts")
+    private var REF_REPORTS = DB_BASE.collection("reports")
     
     // MARK: CREATE FUNCTIONS
     
@@ -36,11 +37,11 @@ class DataService {
                 // Now upload post data to Database
                 
                 let postData: [String: Any] = [
-                    DatabasePostField.postID: postID,
-                    DatabasePostField.userID: userID,
-                    DatabasePostField.displayName: displayName,
-                    DatabasePostField.caption: caption,
-                    DatabasePostField.dateCreated: FieldValue.serverTimestamp(),
+                    DatabasePostField.postID : postID,
+                    DatabasePostField.userID : userID,
+                    DatabasePostField.displayName : displayName,
+                    DatabasePostField.caption : caption,
+                    DatabasePostField.dateCreated : FieldValue.serverTimestamp(),
                 ]
                 
                 document.setData(postData) { (error) in
@@ -60,6 +61,27 @@ class DataService {
                 return
             }
         }
+    }
+    
+    func uploadReport(reason: String, postID: String, handler: @escaping(_ success: Bool) ->()) {
+        
+        let data: [String: Any] = [
+            DatabaseReportsField.content : reason,
+            DatabaseReportsField.postID : postID,
+            DatabaseReportsField.dateCreated : FieldValue.serverTimestamp(),
+        ]
+        
+        REF_REPORTS.addDocument(data: data) { (error) in
+            if let error = error {
+                print("Error uploading report. \(error)")
+                handler(false)
+                return
+            } else {
+                handler(true)
+                return
+            }
+        }
+        
     }
     
     // MARK: GET FUNCTIONS

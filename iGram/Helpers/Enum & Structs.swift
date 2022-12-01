@@ -28,6 +28,17 @@ struct DatabasePostField { // Fields with in Post Document in Database
     static let dateCreated = "date_created"
     static let likeCount = "like_count" // Int
     static let likedBy = "liked_by" // array
+    static let comments = "comments" // sub-collection
+
+}
+
+struct DatabaseCommentsField { // Fields with in the Comment SUBcollection of a Post Document
+    
+    static let commentID = "comment_id"
+    static let displayName = "display_name"
+    static let userID = "user_id"
+    static let content = "content"
+    static let dateCreated = "date_created"
 
 }
 

@@ -10,12 +10,21 @@ import SwiftUI
 struct CommentsView: View {
     
     @Environment(\.colorScheme) var colorScheme
+    
     @State var submissionText: String = ""
     @State var commentArray = [CommentModel]()
+    
+    @State var profilePicture: UIImage = UIImage(named: "logo.loading")!
+    
+    @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
+    @AppStorage(CurrentUserDefaults.displayName) var currentUserDisplayName: String?
+    
+    var post: PostModel
     
     var body: some View {
         VStack {
             
+            // Messages scrollview
             ScrollView {
                 LazyVStack {
                     ForEach(commentArray, id: \.self) { comment in
@@ -24,9 +33,10 @@ struct CommentsView: View {
                 }
             }
             
+            // Botoom HStack
             HStack {
                 
-                Image("cat2")
+                Image(uiImage: profilePicture)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40, alignment: .center)
@@ -35,7 +45,9 @@ struct CommentsView: View {
                 TextField("Add a comment here...", text: $submissionText)
                 
                 Button(action: {
-                    
+                    if textIsAppropriate() {
+                        addComment()
+                    }
                 }, label: {
                     Image(systemName: "paperplane.fill")
                         .font(.title2)
@@ -49,10 +61,24 @@ struct CommentsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
             getComments()
+            getProfilePicture()
         })
     }
     
     // MARK: FUNCTIONS
+    
+    func getProfilePicture() {
+        
+        guard let userID = currentUserID else { return }
+        
+        ImageManager.instance.downloadProfileImage(userID: userID) { (returnedImage) in
+            if let image = returnedImage {
+                self.profilePicture = image
+            }
+        }
+        
+    }
+    
     func getComments() {
         
         print("GET COMMENTS FROM DATABASE")
@@ -68,12 +94,59 @@ struct CommentsView: View {
         self.commentArray.append(comment4)
         
     }
+    
+    func textIsAppropriate() -> Bool {
+        
+        // Check if the text has curses
+        // Check if the text is long enough
+        // Check if the text is blank
+        // Check for innapropriate things
+        
+        // Checking for bad words
+        let badWordArray: [String] = ["shit", "ass"]
+        
+        let words = submissionText.components(separatedBy: " ")
+        
+        for word in words {
+            if badWordArray.contains(word) {
+                return false
+            }
+        }
+        
+        // Checking for minimum character count
+        if submissionText.count < 3 {
+            return false
+        }
+        
+        return true
+    }
+    
+    func addComment() {
+        
+        guard let userID = currentUserID, let displayName = currentUserDisplayName else { return }
+        
+        DataService.instance.uploadComment(postID: post.postID, content: submissionText, displayName: displayName, userID: userID) { (success, returnedCommentID) in
+            
+            if success, let commentID = returnedCommentID {
+                
+                let newComment = CommentModel(commentID: commentID, userID: userID, username: displayName, content: submissionText, dataCreated: Date())
+                self.commentArray.append(newComment)
+                self.submissionText = ""
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+            
+        }
+        
+    }
 }
 
 struct CommentsView_Previews: PreviewProvider {
+    
+    static let post = PostModel(postID: "asd", userID: "asd", username: "sad", dateCreated: Date(), likeCount: 0, likedByUser: false)
+    
     static var previews: some View {
         NavigationView {
-            CommentsView()
+            CommentsView(post: post)
         }
     }
 }

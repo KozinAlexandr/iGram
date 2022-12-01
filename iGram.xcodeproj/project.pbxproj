@@ -35,6 +35,7 @@
 		4018A71A29340CB700A2573B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A71929340CB700A2573B /* ProfileHeaderView.swift */; };
 		402661C62938D24A00EB3EF3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402661C52938D24A00EB3EF3 /* DataService.swift */; };
 		4049A431293902840000D25B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049A430293902840000D25B /* LazyView.swift */; };
+		4081025A2939564300ABA40F /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408102592939564300ABA40F /* AnalyticsService.swift */; };
 		409647EE2937C1BC0055F84B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 409647ED2937C1BC0055F84B /* GoogleService-Info.plist */; };
 		409647F12937C3470055F84B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 409647F02937C3470055F84B /* FirebaseAnalytics */; };
 		409647F32937C3470055F84B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 409647F22937C3470055F84B /* FirebaseAuth */; };
@@ -83,6 +84,7 @@
 		4018A71929340CB700A2573B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		402661C52938D24A00EB3EF3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		4049A430293902840000D25B /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		408102592939564300ABA40F /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		409647ED2937C1BC0055F84B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		409648012937CEE20055F84B /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		409648032937E9720055F84B /* SignInWithGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogle.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				40156C382938093900468A4C /* AuthService.swift */,
 				402661C52938D24A00EB3EF3 /* DataService.swift */,
+				408102592939564300ABA40F /* AnalyticsService.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			files = (
 				40D6765E292AC15D001B3183 /* FeedView.swift in Sources */,
 				40156C392938093900468A4C /* AuthService.swift in Sources */,
+				4081025A2939564300ABA40F /* AnalyticsService.swift in Sources */,
 				40156C3B293816AF00468A4C /* Enum & Structs.swift in Sources */,
 				40124D4B2936A72B00269DDF /* SignInWithAppleButtonCustom.swift in Sources */,
 				40D67663292AC72C001B3183 /* PostModel.swift in Sources */,

@@ -121,7 +121,7 @@ struct SettingsView: View {
         .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
     
-    // MARK: FUNCTIONS.
+    // MARK: FUNCTIONS
     
     func openCustomURL(urlString: String) {
         guard let url = URL(string: urlString) else { return }
@@ -139,14 +139,6 @@ struct SettingsView: View {
                 // Dismiss settings view
                 self.presentationMode.wrappedValue.dismiss()
                 
-                // Updated UserDefaults
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    
-                    let defaultsDictionary = UserDefaults.standard.dictionaryRepresentation()
-                    defaultsDictionary.keys.forEach { key in
-                        UserDefaults.standard.removeObject(forKey: key)
-                    }
-                }
             } else {
                 print("Error logging out")
                 self.showSignOutError.toggle()

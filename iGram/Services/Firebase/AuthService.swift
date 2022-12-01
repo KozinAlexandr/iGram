@@ -24,28 +24,35 @@ class AuthService {
     
     // MARK: AUTH USER FUNCTIONS
     
-    func logInUserToFirebase(credential: AuthCredential, handler: @escaping (_ providerID: String?, _ isError: Bool) -> ()) {
+    func logInUserToFirebase(credential: AuthCredential, handler: @escaping (_ providerID: String?, _ isError: Bool, _ isNewUser: Bool?, _ userID: String?) -> ()) {
         
         Auth.auth().signIn(with: credential) { (result, error) in
             
             // Check for errors
             if error != nil {
                 print("Error loggine in to Firebase")
-                handler(nil, true)
+                handler(nil, true, nil, nil)
                 return
             }
             
             // Check for provider ID
             guard let providerID = result?.user.uid else {
                 print("Error getting provider ID")
-                handler(nil, true)
+                handler(nil, true, nil, nil)
                 return
             }
             
-            // Success connecting to Firebase
-            handler(providerID, false)
+            self.checkIfUserExistsInDatabase(providerID: providerID) { (returnedUserID) in
+                
+                if let userID = returnedUserID {
+                    // User exists, log in to app immediately
+                    handler(providerID, false, false, userID)
+                } else {
+                    // User does NOT exist, continue to onboarding a new user
+                    handler(providerID, false, true, nil)
+                }
+            }
         }
-        
     }
     
     func logInUserToApp(userID: String, hanlder: @escaping(_ success: Bool) -> ()) {
@@ -87,6 +94,15 @@ class AuthService {
         }
         
         handler(true)
+        
+        // Updated UserDefaults
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            
+            let defaultsDictionary = UserDefaults.standard.dictionaryRepresentation()
+            defaultsDictionary.keys.forEach { key in
+                UserDefaults.standard.removeObject(forKey: key)
+            }
+        }
     }
     
     func createNewUserInDatabase(name: String, email: String, providerID: String, provider: String, profileImage: UIImage, handler: @escaping(_ userID: String?) -> ()) {
@@ -122,6 +138,24 @@ class AuthService {
             
         }
         
+    }
+    
+    private func checkIfUserExistsInDatabase(providerID: String, handler: @escaping(_ existingUserID: String?) -> ()) {
+        // If a userID is returned, then the user does exist in our database
+        
+        REF_USERS.whereField(DatabaseUserField.providerID, isEqualTo: providerID).getDocuments { querySnapshot, error in
+            
+            if let snapshot = querySnapshot, snapshot.count > 0, let document = snapshot.documents.first {
+                // SUCCESS
+                let existingUserID = document.documentID
+                handler(existingUserID)
+                return
+            } else {
+                // ERROR, NEW USER
+                handler(nil)
+                return
+            }
+        }
     }
     
     // MARK: GET USER FUNCTIONS

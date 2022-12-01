@@ -81,17 +81,18 @@ struct CommentsView: View {
     
     func getComments() {
         
+        guard self.commentArray.isEmpty else { return }
+
         print("GET COMMENTS FROM DATABASE")
+                
+        if let caption = post.caption, caption.count > 1 {
+            let captionComment = CommentModel(commentID: "", userID: post.userID, username: post.username, content: caption, dataCreated: post.dateCreated)
+            self.commentArray.append(captionComment)
+        }
         
-        let comment1 = CommentModel(commentID: "", userID: "", username: "Alex Kozin", content: "На ошибках учатся, после ошибок лечатся.", dataCreated: Date())
-        let comment2 = CommentModel(commentID: "", userID: "", username: "Alex Petrishchev", content: "Прихожу на экзамен по чилить. Туда сюда кобанчиком, а экзамен, то по философии. Беру билет и первый вопрос: Столько это сколько ? Что было дальше и так знаете.", dataCreated: Date())
-        let comment3 = CommentModel(commentID: "", userID: "", username: "Nikita Simakov", content: "Человеку нужна причина для существования, иначе жизнь ничем не будет отличаться от смерти.", dataCreated: Date())
-        let comment4 = CommentModel(commentID: "", userID: "", username: "Kostya Lishenkov", content: "Только начнешь работать, обязательно кто-нибудь разбудит.", dataCreated: Date())
-        
-        self.commentArray.append(comment1)
-        self.commentArray.append(comment2)
-        self.commentArray.append(comment3)
-        self.commentArray.append(comment4)
+        DataService.instance.downloadComments(postID: post.postID) { (returnedComments) in
+            self.commentArray.append(contentsOf: returnedComments)
+        }
         
     }
     

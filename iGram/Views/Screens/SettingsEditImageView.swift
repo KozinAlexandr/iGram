@@ -9,12 +9,19 @@ import SwiftUI
 
 struct SettingsEditImageView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var title: String
     @State var description: String
     @State var selectedImage: UIImage // Image shown on this screen
     @State var sourceType: UIImagePickerController.SourceType = UIImagePickerController.SourceType.photoLibrary
     
     @State var showImagePicker: Bool = false
+    @State var showSuccessAlert: Bool = false
+    
+    @Binding var profileImage: UIImage // Image shown on the profile
+    
+    @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -49,7 +56,7 @@ struct SettingsEditImageView: View {
             })
             
             Button(action: {
-                
+                saveImage()
             }, label: {
                 Text("Save".uppercased())
                     .font(.title3)
@@ -68,13 +75,38 @@ struct SettingsEditImageView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .navigationBarTitle(title)
+        .alert(isPresented: $showSuccessAlert) { () -> Alert in
+            return Alert(title: Text("Success! 🥳"), message: nil, dismissButton: .default(Text("OK"), action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }))
+        }
     }
+    
+    // MARK: FUNCTIONS
+    
+    func saveImage() {
+        
+        guard let userID = currentUserID else { return }
+        
+        // Update the UI of the profile
+        self.profileImage = selectedImage
+        
+        // Update profile image in database
+        ImageManager.instance.uploadProfileImage(userID: userID, image: selectedImage)
+        
+        self.showSuccessAlert.toggle()
+        
+    }
+    
 }
 
 struct SettingsEditImageView_Previews: PreviewProvider {
+    
+    @State static var image: UIImage = UIImage(named: "dog1")!
+    
     static var previews: some View {
         NavigationView {
-            SettingsEditImageView(title: "Title", description: "Description", selectedImage: UIImage(named: "dog1")!)
+            SettingsEditImageView(title: "Title", description: "Description", selectedImage: UIImage(named: "dog1")!, profileImage: $image)
         }
     }
 }

@@ -16,6 +16,7 @@ struct SettingsView: View {
     
     @Binding var userDisplayName: String
     @Binding var userBio: String
+    @Binding var userProfilePicture: UIImage
     
     var body: some View {
         NavigationView {
@@ -56,7 +57,7 @@ struct SettingsView: View {
                     })
                     
                     NavigationLink(
-                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Mosts users make it an image of themselves or of their who(?)!", selectedImage: UIImage(named: "dog1")!),
+                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Mosts users make it an image of themselves or of their who(?)!", selectedImage: userProfilePicture, profileImage: $userProfilePicture),
                         label: {
                             SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                         })
@@ -155,8 +156,9 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     
     @State static var testString: String = ""
+    @State static var image: UIImage = UIImage(named: "dog1")!
     
     static var previews: some View {
-        SettingsView(userDisplayName: $testString, userBio: $testString)
+        SettingsView(userDisplayName: $testString, userBio: $testString, userProfilePicture: $image)
     }
 }

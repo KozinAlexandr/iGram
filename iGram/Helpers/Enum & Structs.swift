@@ -57,3 +57,9 @@ struct CurrentUserDefaults { // Fields for UserDefaults saved with in app
     static let userID = "user_id"
     
 }
+
+
+enum SettingsEditTextOption {
+    case displayName
+    case bio
+}

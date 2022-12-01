@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-
-enum SettingsEditTextOption {
-    case displayName
-    case bio
-}
-
 struct SettingsEditTextView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -115,7 +109,7 @@ struct SettingsEditTextView: View {
             self.profileText = submissionText
             
             // Update the UserDefault
-            UserDefaults.standard.setValue(submissionText, forKey: CurrentUserDefaults.displayName)
+            UserDefaults.standard.set(submissionText, forKey: CurrentUserDefaults.displayName)
             
             // Update on all of the user's posts
             DataService.instance.updateDisplayNameOnPosts(userID: userID, displayName: submissionText)
@@ -128,7 +122,20 @@ struct SettingsEditTextView: View {
             }
             
         case .bio:
-            break
+            
+            // Update the UI on the Profile
+            self.profileText = submissionText
+            
+            // Update the UserDefault
+            UserDefaults.standard.set(submissionText, forKey: CurrentUserDefaults.bio)
+            
+            // Update the user's profile in Database
+            AuthService.instance.updateUserBio(userID: userID, bio: submissionText) { (success) in
+                if success {
+                    self.showSuccessAlert.toggle()
+                }
+            }
+            
         }
         
     }

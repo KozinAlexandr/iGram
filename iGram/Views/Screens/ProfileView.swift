@@ -39,13 +39,14 @@ struct ProfileView: View {
         )
         .onAppear(perform: {
             getProfileImage()
+            getAdditionalProfileInfo()
         })
         .sheet(isPresented: $showSettings, content: {
-            SettingsView(userDisplayName: $profileDisplayName, userBio: $profileBio)
+            SettingsView(userDisplayName: $profileDisplayName, userBio: $profileBio, userProfilePicture: $profileImage)
         })
     }
     
-    // MARK: FUNCTIONS.
+    // MARK: FUNCTIONS
     
     func getProfileImage() {
         

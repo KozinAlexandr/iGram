@@ -10,7 +10,9 @@ import SwiftUI
 struct ProfileView: View {
     
     @Environment(\.colorScheme) var colorScheme
+    
     @State var profileDisplayName: String
+    @State var profileImage: UIImage = UIImage(named: "logo.loading")!
     @State var showSettings: Bool = false
     
     var isMyProfile: Bool
@@ -19,7 +21,7 @@ struct ProfileView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            ProfileHeaderView(profileDisplayName: $profileDisplayName)
+            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage)
             Divider()
             ImageGridView(posts: posts)
         })
@@ -34,10 +36,26 @@ struct ProfileView: View {
                                     .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                                     .opacity(isMyProfile ? 1.0 : 0.0)
         )
+        .onAppear(perform: {
+            getProfileImage()
+        })
         .sheet(isPresented: $showSettings, content: {
             SettingsView()
         })
     }
+    
+    // MARK: FUNCTIONS
+    
+    func getProfileImage() {
+        
+        ImageManager.instance.downloadProfileImage(userID: profileUserID) { (returnedImage) in
+            if let image = returnedImage {
+                self.profileImage = image
+            }
+        }
+        
+    }
+    
 }
 
 struct ProfileView_Previews: PreviewProvider {

@@ -9,6 +9,8 @@ import Foundation
 import FirebaseStorage // holds images and videos
 import SwiftUI
 
+let imageCache = NSCache<AnyObject, UIImage>()
+
 class ImageManager {
     
     // MARK: PROPERTIES
@@ -40,6 +42,17 @@ class ImageManager {
             handler(success)
         }
         
+    }
+    
+    func downloadProfileImage(userID: String, handler: @escaping(_ image: UIImage?) -> ()) {
+        
+        // Get the path where the image is saved
+        let path = getProfileImagePath(userID: userID)
+        
+        // Download the image from path
+        downloadImage(path: path) { (returnedImage) in
+            handler(returnedImage)
+        }
     }
     
     
@@ -107,7 +120,29 @@ class ImageManager {
                 hanlder(true)
                 return
             }
-            
+        }
+    }
+    
+    private func downloadImage(path: StorageReference, handler: @escaping(_ image: UIImage?) ->()) {
+        
+        if let cachedImage = imageCache.object(forKey: path) {
+            print("Image found in cache")
+            handler(cachedImage)
+            return
+        } else {
+            path.getData(maxSize: 27 * 1024 * 1024) { (returnedImageData, error) in
+                
+                if let data = returnedImageData, let image = UIImage(data: data) {
+                    // Success getting image data
+                    imageCache.setObject(image, forKey: path)
+                    handler(image)
+                    return
+                } else {
+                    print("Error getting data from path for image")
+                    handler(nil)
+                    return
+                }
+            }
         }
     }
     

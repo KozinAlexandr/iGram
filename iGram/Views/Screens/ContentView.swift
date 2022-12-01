@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
+    @AppStorage(CurrentUserDefaults.displayName) var currentUserDisplayName: String?
     
     var body: some View {
         TabView {
@@ -38,9 +39,9 @@ struct ContentView: View {
                 }
             
             ZStack {
-                if currentUserID != nil {
+                if let userID = currentUserID, let displayName = currentUserDisplayName {
                     NavigationView {
-                        ProfileView(profileDisplayName: "My Profile", isMyProfile: true, profileUserID: "")
+                        ProfileView(profileDisplayName: displayName, isMyProfile: true, profileUserID: userID)
                     }
                 } else {
                     SignUpView()

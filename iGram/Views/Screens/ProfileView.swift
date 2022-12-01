@@ -17,7 +17,7 @@ struct ProfileView: View {
     
     var isMyProfile: Bool
     var profileUserID: String
-    var posts = PostArrayObject()
+    var posts: PostArrayObject
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -61,7 +61,7 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ProfileView(profileDisplayName: "Alex", isMyProfile: true, profileUserID: "")
+            ProfileView(profileDisplayName: "Alex", isMyProfile: true, profileUserID: "", posts: PostArrayObject(userID: ""))
         }
     }
 }

@@ -44,8 +44,8 @@ struct OnboardingView: View {
             // MARK: SIGN IN WITH APPLE
             // doesn't work because there is no Apple subscription
             Button(action: {
-                showOnboardingPart2.toggle()
-                //SignInWithApple.instance.startSignInWithAppleFlow(view: self)
+                //showOnboardingPart2.toggle()
+                SignInWithApple.instance.startSignInWithAppleFlow(view: self)
             }, label: {
                 SignInWithAppleButtonCustom()
                     .frame(height: 60)

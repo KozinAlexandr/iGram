@@ -34,6 +34,7 @@
 		4018A7162934091700A2573B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A7152934091700A2573B /* ProfileView.swift */; };
 		4018A71A29340CB700A2573B /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018A71929340CB700A2573B /* ProfileHeaderView.swift */; };
 		402661C62938D24A00EB3EF3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402661C52938D24A00EB3EF3 /* DataService.swift */; };
+		4049A431293902840000D25B /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4049A430293902840000D25B /* LazyView.swift */; };
 		409647EE2937C1BC0055F84B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 409647ED2937C1BC0055F84B /* GoogleService-Info.plist */; };
 		409647F12937C3470055F84B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 409647F02937C3470055F84B /* FirebaseAnalytics */; };
 		409647F32937C3470055F84B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 409647F22937C3470055F84B /* FirebaseAuth */; };
@@ -81,6 +82,7 @@
 		4018A7152934091700A2573B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4018A71929340CB700A2573B /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		402661C52938D24A00EB3EF3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		4049A430293902840000D25B /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		409647ED2937C1BC0055F84B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		409648012937CEE20055F84B /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		409648032937E9720055F84B /* SignInWithGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogle.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				40D6765B292ABCB0001B3183 /* Extensions.swift */,
 				40156C3A293816AF00468A4C /* Enum & Structs.swift */,
+				4049A430293902840000D25B /* LazyView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				40108C81292D803300DE640D /* MessageView.swift in Sources */,
 				40D6765C292ABCB0001B3183 /* Extensions.swift in Sources */,
 				40D67665292ACBD6001B3183 /* PostArrayObject.swift in Sources */,
+				4049A431293902840000D25B /* LazyView.swift in Sources */,
 				4018A70D2933BCF200A2573B /* ImageGridView.swift in Sources */,
 				40D67660292AC261001B3183 /* PostView.swift in Sources */,
 				409648022937CEE20055F84B /* SignInWithApple.swift in Sources */,

@@ -121,7 +121,7 @@ struct SettingsView: View {
         .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
     
-    // MARK: FUNCTIONS
+    // MARK: FUNCTIONS.
     
     func openCustomURL(urlString: String) {
         guard let url = URL(string: urlString) else { return }

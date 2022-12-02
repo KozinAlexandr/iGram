@@ -54,6 +54,7 @@
 		40D67660292AC261001B3183 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D6765F292AC261001B3183 /* PostView.swift */; };
 		40D67663292AC72C001B3183 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D67662292AC72C001B3183 /* PostModel.swift */; };
 		40D67665292ACBD6001B3183 /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D67664292ACBD6001B3183 /* PostArrayObject.swift */; };
+		858BC046F4C67531338CB2BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71226D0B25F01BB404303F0C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		40D6765F292AC261001B3183 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		40D67662292AC72C001B3183 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		40D67664292ACBD6001B3183 /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
+		DDB6F3E747BAF8D9DAC8397C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		056BAD15F45432188E9B0347 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71226D0B25F01BB404303F0C /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		40156C372938091800468A4C /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +194,7 @@
 				409647ED2937C1BC0055F84B /* GoogleService-Info.plist */,
 				40D6764D292AAFD9001B3183 /* Preview Content */,
 				40D67655292AB6AB001B3183 /* LaunchScreen.storyboard */,
+				056BAD15F45432188E9B0347 /* Resources */,
 			);
 			path = iGram;
 			sourceTree = "<group>";
@@ -338,6 +349,7 @@
 				409647EE2937C1BC0055F84B /* GoogleService-Info.plist in Resources */,
 				40D6764F292AAFD9001B3183 /* Preview Assets.xcassets in Resources */,
 				40D6764C292AAFD9001B3183 /* Assets.xcassets in Resources */,
+				858BC046F4C67531338CB2BA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +400,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		71226D0B25F01BB404303F0C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB6F3E747BAF8D9DAC8397C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		40D67650292AAFD9001B3183 /* Debug */ = {
@@ -526,7 +549,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +588,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

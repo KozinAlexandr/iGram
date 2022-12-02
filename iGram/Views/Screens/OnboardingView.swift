@@ -59,11 +59,8 @@ struct OnboardingView: View {
                 //showOnboardingPart2.toggle()
             }, label: {
                 HStack {
-                    
-                    Image(systemName: "globe")
-                    
+                    Image("google")
                     Text("Sign in with Google")
-                    
                 }
                 .frame(height: 60)
                 .frame(maxWidth: .infinity)

@@ -32,8 +32,7 @@ struct SettingsView: View {
                             .frame(width: 80, height: 80, alignment: .center)
                             .cornerRadius(12)
                         
-                        // Change na cours work
-                        Text("iGram is the #1 app for posting pictures of your (who?) and sharing them across the world. We are a (who?)-loving community and we're happy to have you!")
+                        Text("iGram is an application for publishing your photos and sharing them around the world.  The application was created for coursework at the university")
                             .font(.footnote)
                     })
                 })
@@ -74,33 +73,43 @@ struct SettingsView: View {
                 })
                 .padding()
                 
-                // MARK: SECTION 3: APPLICATION
-                GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone"), content: {
-                    //add github link on project
-                    Button(action: {
-                        openCustomURL(urlString: "https://www.google.com")
-                    }, label: {
-                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
-                    })
-                    
-                    Button(action: {
-                        openCustomURL(urlString: "https://www.yahoo.com")
-                    }, label: {
-                        SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
-                    })
-
-                    
+                // MARK: SECTION 3: LINKS
+                GroupBox(label: SettingsLabelView(labelText: "Links", labelImage: "link"), content: {
+                   
                     Button(action: {
                         openCustomURL(urlString: "https://github.com/KozinAlexandr/iGram")
                     }, label: {
                         SettingsRowView(leftIcon: "globe", text: "Project on Github", color: Color.MyTheme.yellowColor)
                     })
+                    
+                    // VK
+                    
+                    // Telegram
+                    
                 })
                 .padding()
                 
-                // MARK: SECTION 4: SIGN OFF
+                // MARK: SECTION 4: APPLICATION
+                GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone"), content: {
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.termsfeed.com/live/b268cc53-fa3f-4c30-a7b9-68347910a06a")
+                    }, label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
+                    })
+                    
+                    Button(action: {
+                        openCustomURL(urlString: "https://www.termsfeed.com/live/fd06098a-91a1-435e-b33e-19edddab82cd")
+                    }, label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
+                    })
+                })
+                .padding()
+                
+                
+                // MARK: SECTION 5: SIGN OFF
                 GroupBox {
-                    Text("iGram was made with love. \n All Rights Reserved \n Cool Apps Inc. \n Copyright 2022 ❤️")
+                    Text("Pavlova set a test please \n iGram was made with love \n All Rights Reserved \n Copyright 2022 ❤️")
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)

@@ -104,7 +104,7 @@ struct CommentsView: View {
         // Check for innapropriate things
         
         // Checking for bad words
-        let badWordArray: [String] = ["shit", "ass"]
+        let badWordArray: [String] = ["shit", "ass", "fuck", "bastard", "Shit", "Ass", "Fuck", "Bastard"]
         
         let words = submissionText.components(separatedBy: " ")
         

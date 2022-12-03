@@ -45,26 +45,26 @@ struct SettingsView: View {
                         destination:
                             SettingsEditTextView(submissionText: userDisplayName, title: "Display Name", description: "You can edit your display name here. This will be seen by other users on your profile and on your posts!", placeholder: "Your display name here...", settingsEditTextOption: .displayName, profileText: $userDisplayName),
                         label: {
-                            SettingsRowView(leftIcon: "pencil", text: "Display Name", color: Color.MyTheme.purpleColor)
+                            SettingsRowView(leftIcon: "pencil", text: "Display Name", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                     })
                     
                     NavigationLink(
                         destination:
                             SettingsEditTextView(submissionText: userBio, title: "Profile Bio", description: "Your bio is a great place to let other users know a little about you. It will be shown on your profile only.", placeholder: "Your bio here...", settingsEditTextOption: .bio, profileText: $userBio),
                         label: {
-                            SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
+                            SettingsRowView(leftIcon: "text.quote", text: "Bio", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                     })
                     
                     NavigationLink(
                         destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Mosts users make it an image of themselves or of their who(?)!", selectedImage: userProfilePicture, profileImage: $userProfilePicture),
                         label: {
-                            SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
+                            SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                         })
                     
                     Button(action: {
                         signOut()
                     }, label: {
-                        SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+                        SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                     })
                     .alert(isPresented: $showSignOutError, content: {
                         return Alert(title: Text("Error signing out 🥵"))
@@ -79,10 +79,14 @@ struct SettingsView: View {
                     Button(action: {
                         openCustomURL(urlString: "https://github.com/KozinAlexandr/iGram")
                     }, label: {
-                        SettingsRowView(leftIcon: "globe", text: "Project on Github", color: Color.MyTheme.yellowColor)
+                        SettingsRowView(leftIcon: "network", text: "Project on Github", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                     })
                     
-                    // VK
+                    Button(action: {
+                        openCustomURL(urlString: "https://t.me/argonauttz")
+                    }, label: {
+                        SettingsRowView(leftIcon: "signature", text: "Contact", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
+                    })
                     
                     // Telegram
                     
@@ -95,13 +99,13 @@ struct SettingsView: View {
                     Button(action: {
                         openCustomURL(urlString: "https://www.termsfeed.com/live/b268cc53-fa3f-4c30-a7b9-68347910a06a")
                     }, label: {
-                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
+                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                     })
                     
                     Button(action: {
                         openCustomURL(urlString: "https://www.termsfeed.com/live/fd06098a-91a1-435e-b33e-19edddab82cd")
                     }, label: {
-                        SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: Color.MyTheme.yellowColor)
+                        SettingsRowView(leftIcon: "folder.fill", text: "Terms & Conditions", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                     })
                 })
                 .padding()

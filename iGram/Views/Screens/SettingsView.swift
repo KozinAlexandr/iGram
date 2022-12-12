@@ -17,6 +17,7 @@ struct SettingsView: View {
     @Binding var userDisplayName: String
     @Binding var userBio: String
     @Binding var userProfilePicture: UIImage
+    //@Binding var userFeedback:String
     
     var body: some View {
         NavigationView {
@@ -56,10 +57,18 @@ struct SettingsView: View {
                     })
                     
                     NavigationLink(
-                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Mosts users make it an image of themselves or of their who(?)!", selectedImage: userProfilePicture, profileImage: $userProfilePicture),
+                        destination: SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts. Mosts users make it an image of themselves!", selectedImage: userProfilePicture, profileImage: $userProfilePicture),
                         label: {
                             SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                         })
+                    
+                    NavigationLink(
+                        destination:
+                            SettingsEditTextView(submissionText: "", title: "Feedback", description: "By leaving a review, you help the creator of the application in its promotion and can thank the creator or write about the error found.", placeholder: "Your feed back here...", settingsEditTextOption: .bio, profileText: $userBio),
+                        label: {
+                            SettingsRowView(leftIcon: "message.fill", text: "Feedback", color: colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
+                    })
+                    
                     
                     Button(action: {
                         signOut()

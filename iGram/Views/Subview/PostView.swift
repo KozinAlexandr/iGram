@@ -89,7 +89,7 @@ struct PostView: View {
                 
                 if addHeartAnimationToView {
                     LikeAnimationView(animate: $animateLike)
-                }
+                } 
             }
         
             // MARK: FOOTER
@@ -267,7 +267,7 @@ struct PostView: View {
         
         let message = "Check out this post on iGram!"
         let image = postImage
-        let link = URL(string: "https://www.google.com")!
+        let link = URL(string: "https://github.com/KozinAlexandr/iGram")!
         
         let activityViewController = UIActivityViewController(activityItems: [message, image, link], applicationActivities: nil)
         

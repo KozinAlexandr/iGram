@@ -11,6 +11,7 @@ import SwiftUI
 extension Color {
     
     struct MyTheme {
+        
         static var purpleColor: Color {
             return Color("ColorPurple")
         }

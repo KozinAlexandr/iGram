@@ -34,7 +34,7 @@ struct OnboardingView: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color.MyTheme.purpleColor)
             
-            Text("iGram is the #1 app for posting pictures of your (who?) and sharing them across the world. We are a (who?)-loving community and we're happy to have you!")
+            Text("iGram is an application for publishing your photos and sharing them around the world.  The application was created for coursework at the university")
                 .font(.headline)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)

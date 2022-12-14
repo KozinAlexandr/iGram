@@ -20,11 +20,11 @@ struct ContentView: View {
     var body: some View {
         TabView {
             NavigationView {
-                FeedView(posts: feedPosts, title: "Feed")
+                FeedView(posts: feedPosts, title: "Лента")
             }
                 .tabItem {
                     Image(systemName: "book.fill")
-                    Text("Feed")
+                    Text("Лента")
                 }
             
             NavigationView {
@@ -32,13 +32,13 @@ struct ContentView: View {
             }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("Browse")
+                    Text("Обозреватель")
                 }
             
             UploadView()
                 .tabItem {
                     Image(systemName: "square.and.arrow.up.fill")
-                    Text("Upload")
+                    Text("Загрузка")
                 }
             
             ZStack {
@@ -52,7 +52,7 @@ struct ContentView: View {
             }
                 .tabItem {
                     Image(systemName: "person.fill")
-                    Text("Profile")
+                    Text("Профиль")
                 }
         }
         .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)

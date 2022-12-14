@@ -26,7 +26,7 @@ struct ProfileView: View {
             Divider()
             ImageGridView(posts: posts)
         })
-        .navigationBarTitle("Profile")
+        .navigationBarTitle("Профиль")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
                                 Button(action: {

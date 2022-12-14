@@ -42,7 +42,7 @@ struct CommentsView: View {
                     .frame(width: 40, height: 40, alignment: .center)
                     .cornerRadius(20)
                 
-                TextField("Add a comment here...", text: $submissionText)
+                TextField("Добавить комментарий здесь...", text: $submissionText)
                 
                 Button(action: {
                     if textIsAppropriate() {
@@ -57,7 +57,7 @@ struct CommentsView: View {
             .padding(.all, 6)
         }
         .padding(.horizontal)
-        .navigationBarTitle("Comments")
+        .navigationBarTitle("Комментарии")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
             getComments()

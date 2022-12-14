@@ -20,14 +20,14 @@ struct SignUpView: View {
                 .scaledToFit()
                 .frame(width: 100, height: 100, alignment: .center)
             
-            Text("You're not signed in! 🙁")
+            Text("Вы не авторизованы! 🙁")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
                 .foregroundColor(Color.MyTheme.purpleColor)
             
-            Text("Click the button below to create an acoount and join the fun!")
+            Text("Нажмите на кнопку ниже, чтобы зарегистрироваться или войти в аккаунт!")
                 .font(.headline)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
@@ -36,7 +36,7 @@ struct SignUpView: View {
             Button(action: {
                 showOnboarding.toggle()
             }, label: {
-                Text("Sign in / Sign up".uppercased())
+                Text("Авторизация".uppercased())
                     .font(.headline)
                     .fontWeight(.bold)
                     .padding()

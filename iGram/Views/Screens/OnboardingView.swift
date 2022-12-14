@@ -29,12 +29,12 @@ struct OnboardingView: View {
                 .frame(width: 100, height: 100, alignment: .center)
                 .shadow(radius: 12)
             
-            Text("Welcome to iGram!")
+            Text("Приветствую в iGram!")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundColor(Color.MyTheme.purpleColor)
             
-            Text("iGram is an application for publishing your photos and sharing them around the world.  The application was created for coursework at the university")
+            Text("iGram - это приложение для публикации ваших фотографий и обмена ими по всему миру.  Приложение было создано для курсовой работы в университете.")
                 .font(.headline)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
@@ -60,6 +60,8 @@ struct OnboardingView: View {
             }, label: {
                 HStack {
                     Image("google")
+                        .resizable()
+                        .frame(width: 25, height: 25)
                     Text("Sign in with Google")
                 }
                 .frame(height: 60)
@@ -73,7 +75,7 @@ struct OnboardingView: View {
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
-                Text("Continue as guest".uppercased())
+                Text("Продолжить как гость".uppercased())
                     .font(.headline)
                     .fontWeight(.medium)
                     .padding()

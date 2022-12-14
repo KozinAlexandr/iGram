@@ -16,7 +16,7 @@ struct BrowseView: View {
             CarouselView()
             ImageGridView(posts: posts)
         })
-        .navigationBarTitle("Browse")
+        .navigationBarTitle("Обозреватель")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
